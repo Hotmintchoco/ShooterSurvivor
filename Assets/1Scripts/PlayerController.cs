@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
+        // myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
+        transform.position += velocity * Time.deltaTime;
     }
 
 }

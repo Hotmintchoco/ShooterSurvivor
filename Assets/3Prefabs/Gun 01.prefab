@@ -351,7 +351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4033221191691853980
 Transform:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1154795828146324257
 Transform:
   m_ObjectHideFlags: 0
@@ -752,3 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86ddbec6be19f74b9b296dc18ba95f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
+  muzzle: {fileID: 1154795828146324257}
+  projectile: {fileID: -6397776869370589916, guid: 5a9ea36be8f966c4d833cf6c5b70f82d, type: 3}
+  msBetweenShots: 100
+  muzzleVelocity: 35
