@@ -124,4 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1363ab4177b994c40b70cc008a09cc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
   speed: 10

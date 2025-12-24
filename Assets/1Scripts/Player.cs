@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(GunController))]
-public class Player : MonoBehaviour
+public class Player : LivingEntity
 {
     public float moveSpeed = 5f;
 
@@ -10,11 +10,10 @@ public class Player : MonoBehaviour
     PlayerController controller;
     GunController gunController;
 
-    Animator anim;
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         controller = GetComponent<PlayerController>();
-        anim = GetComponentInChildren<Animator>();
         gunController = GetComponent<GunController>();
         viewCamera = Camera.main;
     }
@@ -46,7 +45,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             gunController.Shoot();
+            anim.SetTrigger("doShoot");
         }
     }
-    
 }
