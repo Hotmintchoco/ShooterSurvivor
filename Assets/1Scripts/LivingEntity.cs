@@ -13,7 +13,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         health = startingHealth;
     }
 
-    public void TakeHit(float damage, RaycastHit hit)
+    public virtual void TakeHit(float damage, RaycastHit hit)
     {
         health -= damage;
         anim.SetTrigger("GetHit");

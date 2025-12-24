@@ -259,6 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157ed694891a5fa44a117e29be95ebae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  gameTime: 0
+  maxGameTime: 19.8
   pool: {fileID: 1968318592}
   player: {fileID: 911561502}
 --- !u!4 &81079925
@@ -1435,6 +1437,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnPoint: []
+  spawnTime:
+  - 0.7
+  - 0.3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

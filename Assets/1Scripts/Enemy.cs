@@ -7,15 +7,17 @@ public class Enemy : LivingEntity
 {
     NavMeshAgent pathfinder;
     Transform target;
+    Rigidbody rigid;
     
     bool isChase;
+    float refreshRate = 0.25f;
 
     protected override void Start()
     {
         base.Start();
         pathfinder = GetComponent<NavMeshAgent>();
-        
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        rigid = GetComponent<Rigidbody>();
 
         StartCoroutine(UpdatePath());
 
@@ -33,10 +35,14 @@ public class Enemy : LivingEntity
         
     }
 
+    public override void TakeHit(float damage, RaycastHit hit)
+    {
+        StartCoroutine(KnockBack());
+        base.TakeHit(damage, hit);
+    }
+
     IEnumerator UpdatePath()
     {
-        float refreshRate = 0.25f;
-
         while (target != null)
         {
             Vector3 targetPosition = new Vector3(target.position.x, 0, target.position.z);
@@ -46,5 +52,13 @@ public class Enemy : LivingEntity
             
             yield return new WaitForSeconds(refreshRate);
         }
+    }
+
+    IEnumerator KnockBack()
+    {
+        yield return null;
+        Vector3 playerPos = new Vector3(target.position.x, 0, target.position.z);
+        Vector3 dirVec = transform.position - playerPos;
+        rigid.AddForce(dirVec.normalized * 3, ForceMode.Impulse);
     }
 }
