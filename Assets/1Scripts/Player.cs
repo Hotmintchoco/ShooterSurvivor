@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : LivingEntity
 {
     public float moveSpeed = 5f;
+    public int exp = 0;
 
     Camera viewCamera;
     PlayerController controller;
@@ -47,5 +48,25 @@ public class Player : LivingEntity
             gunController.Shoot();
             anim.SetTrigger("doShoot");
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Item")
+        {
+            Item item = other.GetComponent<Item>();
+            print(item);
+            switch(item.type)
+            {
+                case Item.Type.Exp:
+                    exp += item.value;
+                    break;
+                case Item.Type.Heart:
+                    break;
+                case Item.Type.Weapon:
+                    break;
+            }
+        }
+        Destroy(other.gameObject);
     }
 }

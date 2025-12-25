@@ -5,6 +5,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : LivingEntity
 {
+    public int exp = 1;
+    public Item expItem;
     NavMeshAgent pathfinder;
     Transform target;
     
@@ -17,6 +19,7 @@ public class Enemy : LivingEntity
         base.Start();
         pathfinder = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        expItem.value = exp;
 
         StartCoroutine(UpdatePath());
 
@@ -38,6 +41,12 @@ public class Enemy : LivingEntity
     {
         StartCoroutine(HitStop());
         base.TakeHit(damage, hit);
+    }
+
+    protected override void Die()
+    {
+        Instantiate(expItem, transform.position, transform.rotation);
+        base.Die();
     }
     
     IEnumerator UpdatePath()

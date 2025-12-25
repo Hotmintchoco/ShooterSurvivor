@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   startingHealth: 10
   moveSpeed: 5
+  exp: 0
 --- !u!114 &911561503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1438,8 +1439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnPoint: []
   spawnTime:
-  - 0.7
-  - 0.3
+  - 0.75
+  - 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -128,7 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587f2e6d7ef71af4a9dd38f3f4ca91eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  startingHealth: 10
+  startingHealth: 5
+  exp: 10
+  expItem: {fileID: 3831198720028888026, guid: f22e01decde521544940e19dd3452ef9, type: 3}
 --- !u!195 &3339829778030677328
 NavMeshAgent:
   m_ObjectHideFlags: 0
