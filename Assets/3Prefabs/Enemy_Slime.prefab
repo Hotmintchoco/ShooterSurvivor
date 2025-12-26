@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 84850685672916831}
   m_Layer: 8
   m_Name: Enemy_Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   startingHealth: 2
   exp: 5
+  damage: 1
   expItem: {fileID: 3831198720028888026, guid: f22e01decde521544940e19dd3452ef9, type: 3}
 --- !u!195 &84850685672916831
 NavMeshAgent:

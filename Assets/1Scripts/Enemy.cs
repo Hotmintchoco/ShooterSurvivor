@@ -5,36 +5,63 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : LivingEntity
 {
+    public enum State { Idle, Chasing }
+    State currentState;
+
     public int exp = 1;
+    public float damage = 1f;
     public Item expItem;
     NavMeshAgent pathfinder;
     Transform target;
+    LivingEntity targetEntity;
     
-    bool isChase;
     bool isHit;
+    bool hasTarget;
     float refreshRate = 0.25f;
+    float nextAttackTime;
 
     protected override void Start()
     {
         base.Start();
         pathfinder = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        targetEntity = target.GetComponent<LivingEntity>();
+        targetEntity.OnDeath += OnTargetDeath;
         expItem.value = exp;
+        hasTarget = true;
 
         StartCoroutine(UpdatePath());
 
         Invoke("ChaseStart", 1);
     }
 
-    void ChaseStart()
-    {
-        isChase = true;
-        anim.SetBool("isWalk", true);
-    }
-
     void Update()
     {
         
+    }
+
+    void OnTargetDeath()
+    {
+        hasTarget = false;
+        currentState = State.Idle;
+        anim.SetBool("isWalk", false);
+    }
+
+    void ChaseStart()
+    {
+        currentState = State.Chasing;
+        anim.SetBool("isWalk", true);
+    }
+
+
+    void OnTriggerStay(Collider other)
+    {
+        float tic = 0.5f;
+        if (other.gameObject == target.gameObject && Time.time > nextAttackTime)
+        {
+            nextAttackTime = Time.time + tic;
+            targetEntity.TakeDamage(damage);
+        }
     }
 
     public override void TakeHit(float damage, RaycastHit hit)
@@ -51,11 +78,11 @@ public class Enemy : LivingEntity
     
     IEnumerator UpdatePath()
     {
-        while (target != null)
+        while (hasTarget)
         {
             Vector3 targetPosition = new Vector3(target.position.x, 0, target.position.z);
             
-            if (isChase && !dead && !isHit)
+            if (currentState == State.Chasing && !dead && !isHit)
                 pathfinder.SetDestination(targetPosition);
             
             yield return new WaitForSeconds(refreshRate);
@@ -65,16 +92,15 @@ public class Enemy : LivingEntity
     IEnumerator HitStop()
     {
         isHit = true;
-        pathfinder.isStopped = true; // 이동 멈춤
+        pathfinder.isStopped = true;
         pathfinder.velocity = Vector3.zero; // 현재 관성으로 미끄러지는 것 방지
 
-        // 0.5초 정도 멈춰있게 설정 (원하는 시간만큼 조절)
         yield return new WaitForSeconds(0.5f);
 
-        if (!dead) // 죽지 않았다면 다시 이동 재개
+        if (!dead)
         {
             isHit = false;
-            pathfinder.isStopped = false; // 이동 다시 시작
+            pathfinder.isStopped = false;
         }
     }
 }

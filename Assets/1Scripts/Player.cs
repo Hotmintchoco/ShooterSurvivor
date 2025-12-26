@@ -66,7 +66,7 @@ public class Player : LivingEntity
                 case Item.Type.Weapon:
                     break;
             }
+            Destroy(other.gameObject);
         }
-        Destroy(other.gameObject);
     }
 }

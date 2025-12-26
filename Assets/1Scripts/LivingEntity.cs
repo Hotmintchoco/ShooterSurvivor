@@ -7,6 +7,8 @@ public class LivingEntity : MonoBehaviour, IDamageable
     protected bool dead;
     protected Animator anim;
 
+    public event System.Action OnDeath;
+
     protected virtual void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -14,6 +16,11 @@ public class LivingEntity : MonoBehaviour, IDamageable
     }
 
     public virtual void TakeHit(float damage, RaycastHit hit)
+    {
+        TakeDamage(damage);
+    }
+
+    public void TakeDamage(float damage)
     {
         health -= damage;
         anim.SetTrigger("GetHit");
@@ -27,6 +34,10 @@ public class LivingEntity : MonoBehaviour, IDamageable
     protected virtual void Die()
     {
         dead = true;
+        if (OnDeath != null)
+        {
+            OnDeath();
+        }
         Destroy(gameObject);
     }
 }
