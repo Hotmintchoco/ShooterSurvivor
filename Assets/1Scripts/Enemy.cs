@@ -44,7 +44,8 @@ public class Enemy : LivingEntity
     {
         hasTarget = false;
         currentState = State.Idle;
-        anim.SetBool("isWalk", false);
+        if (anim != null)
+            anim.SetBool("isWalk", false);
     }
 
     void ChaseStart()
@@ -70,7 +71,7 @@ public class Enemy : LivingEntity
         base.TakeHit(damage, hit);
     }
 
-    protected override void Die()
+    public override void Die()
     {
         Instantiate(expItem, transform.position, transform.rotation);
         base.Die();
