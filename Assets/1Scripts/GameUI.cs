@@ -7,10 +7,24 @@ public class GameUI : MonoBehaviour
 {
     public Image fadePlane;
     public GameObject gameOverUI;
+    public RectTransform healthBar;
+
+    Player player;
 
     void Start()
     {
+        player = FindAnyObjectByType<Player>();
         FindAnyObjectByType<Player>().OnDeath += OnGameOver;
+    }
+
+    void Update()
+    {
+        float healthPercent = 0;
+        if (player != null)
+        {
+            healthPercent = player.health / player.startingHealth;
+        }
+        healthBar.localScale = new Vector3(healthPercent, 1, 1);
     }
 
     void OnGameOver()
