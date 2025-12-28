@@ -8,6 +8,7 @@ public class GameUI : MonoBehaviour
     public Image fadePlane;
     public GameObject gameOverUI;
     public RectTransform healthBar;
+    public RectTransform ExpBar;
 
     Player player;
 
@@ -20,11 +21,14 @@ public class GameUI : MonoBehaviour
     void Update()
     {
         float healthPercent = 0;
+        float ExpPercent = 0;
         if (player != null)
         {
             healthPercent = player.health / player.startingHealth;
+            ExpPercent = Mathf.Min(player.exp / player.maxExp, 1);
         }
         healthBar.localScale = new Vector3(healthPercent, 1, 1);
+        ExpBar.localScale = new Vector3(1, ExpPercent, 1);
     }
 
     void OnGameOver()

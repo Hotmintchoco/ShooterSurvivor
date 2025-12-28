@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : LivingEntity
 {
     public float moveSpeed = 5f;
-    public int exp = 0;
+    public float exp = 0;
+    public float maxExp = 100f;
 
     Camera viewCamera;
     PlayerController controller;
