@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunController
   weaponHold: {fileID: 938699049}
-  startingGun: {fileID: 3197667335728118293, guid: 34d5ab99c0bb8e14b813c7075e832c64, type: 3}
+  startingGun: {fileID: 7714593898699506276, guid: 369fb86e402a12f40a423fe625beb5d0, type: 3}
 --- !u!4 &938699049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8442623690604717362, guid: 5bf81c1e7c3fa764c9ad1ad61f333094, type: 3}
@@ -3489,8 +3489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnPoint: []
   spawnTime:
-  - 100
-  - 100
+  - 1
+  - 0.75
 --- !u!1 &2102559403
 GameObject:
   m_ObjectHideFlags: 0

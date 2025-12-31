@@ -67,8 +67,8 @@ public class Enemy : LivingEntity
 
     public override void TakeHit(float damage, RaycastHit hit)
     {
-        StartCoroutine(HitStop());
         base.TakeHit(damage, hit);
+        StartCoroutine(HitStop());
     }
 
     public override void Die()
@@ -98,7 +98,7 @@ public class Enemy : LivingEntity
 
         yield return new WaitForSeconds(0.5f);
 
-        if (!dead)
+        if (!dead && isHit)
         {
             isHit = false;
             pathfinder.isStopped = false;

@@ -82,6 +82,7 @@ public class Player : LivingEntity
                     exp += item.value;
                     break;
                 case Item.Type.Heart:
+                    health += item.value;
                     break;
                 case Item.Type.Weapon:
                     break;
