@@ -8,6 +8,8 @@ public class Player : LivingEntity
     public float exp = 0;
     public float maxExp = 100f;
 
+    public Crosshairs crosshairs;
+
     Camera viewCamera;
     PlayerController controller;
     GunController gunController;
@@ -18,6 +20,7 @@ public class Player : LivingEntity
         controller = GetComponent<PlayerController>();
         gunController = GetComponent<GunController>();
         viewCamera = Camera.main;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -33,7 +36,7 @@ public class Player : LivingEntity
 
         // Look input
         Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.up * gunController.GunHeight);
         float rayDistance;
 
         if (groundPlane.Raycast(ray, out rayDistance))
@@ -41,6 +44,8 @@ public class Player : LivingEntity
             Vector3 point = ray.GetPoint(rayDistance);
             // Debug.DrawLine(ray.origin, point, Color.red);
             controller.LookAt(point);
+            crosshairs.transform.position = point;
+            crosshairs.DetectTargets(ray);
         }
 
         // Weapon input
@@ -53,6 +58,12 @@ public class Player : LivingEntity
         {
             gunController.OnTriggerRelease();
         }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        Cursor.visible = true;
     }
 
     void OnTriggerEnter(Collider other)

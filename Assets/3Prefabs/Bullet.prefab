@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   collisionMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
 --- !u!96 &7623960660464307748
 TrailRenderer:
   serializedVersion: 3
@@ -208,7 +208,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.99371064, g: 0.9930929, b: 0.99058574, a: 1}
-      key1: {r: 0.9308176, g: 0.91791224, b: 0.09659418, a: 1}
+      key1: {r: 0.9308176, g: 0.91791224, b: 0.09659418, a: 0.39215687}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
