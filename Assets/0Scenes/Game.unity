@@ -2170,8 +2170,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be27e4a6d18eff4d83a3d9bc6282502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunController
-  weaponHold: {fileID: 1279730304}
+  weaponHold: {fileID: 938699049}
   startingGun: {fileID: 3197667335728118293, guid: 34d5ab99c0bb8e14b813c7075e832c64, type: 3}
+--- !u!4 &938699049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8442623690604717362, guid: 5bf81c1e7c3fa764c9ad1ad61f333094, type: 3}
+  m_PrefabInstance: {fileID: 345933018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961617172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,8 +3489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnPoint: []
   spawnTime:
-  - 0.75
-  - 0.5
+  - 100
+  - 100
 --- !u!1 &2102559403
 GameObject:
   m_ObjectHideFlags: 0
