@@ -753,10 +753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86ddbec6be19f74b9b296dc18ba95f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
-  muzzle: {fileID: 1154795828146324257}
+  fireMode: 2
+  projectileSpawn:
+  - {fileID: 7066803103301165273}
   projectile: {fileID: -6397776869370589916, guid: 5a9ea36be8f966c4d833cf6c5b70f82d, type: 3}
   msBetweenShots: 100
   muzzleVelocity: 35
+  burstCount: 0
   shell: {fileID: 5531262640562996035, guid: b6c8d33b1b011424b9122dde0e2e7a5f, type: 3}
   shellEjection: {fileID: 990634742475369034}
 --- !u!114 &3492404940091618567
