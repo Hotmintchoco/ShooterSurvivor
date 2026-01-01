@@ -23,12 +23,13 @@ public class LivingEntity : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         health -= damage;
-        anim.SetTrigger("GetHit");
-
+        
         if (health <= 0 && !dead)
         {
             Die();
         }
+        anim.SetTrigger("GetHit");
+
     }
 
     [ContextMenu("Self Destruct")]

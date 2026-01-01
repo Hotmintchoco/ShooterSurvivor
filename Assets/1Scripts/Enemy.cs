@@ -67,8 +67,10 @@ public class Enemy : LivingEntity
 
     public override void TakeHit(float damage, RaycastHit hit)
     {
+        if (dead) return;
         base.TakeHit(damage, hit);
-        StartCoroutine(HitStop());
+        if (health > 0)
+            StartCoroutine(HitStop());
     }
 
     public override void Die()

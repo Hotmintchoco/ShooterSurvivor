@@ -13,6 +13,7 @@ public class Player : LivingEntity
     Camera viewCamera;
     PlayerController controller;
     GunController gunController;
+    Item nearItem;
 
     protected override void Start()
     {
@@ -62,12 +63,31 @@ public class Player : LivingEntity
         {
             gunController.OnTriggerRelease();
         }
+
+        // Get Weapon
+        if (Input.GetKeyDown(KeyCode.E) && nearItem)
+        {
+            gunController.EquipGun(nearItem.value);
+            Destroy(nearItem.gameObject);
+        }
     }
 
     public override void Die()
     {
         base.Die();
         Cursor.visible = true;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Weapon")
+            nearItem = other.GetComponent<Item>();
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Weapon")
+            nearItem = null;
     }
 
     void OnTriggerEnter(Collider other)
@@ -83,8 +103,6 @@ public class Player : LivingEntity
                     break;
                 case Item.Type.Heart:
                     health += item.value;
-                    break;
-                case Item.Type.Weapon:
                     break;
             }
             Destroy(other.gameObject);
