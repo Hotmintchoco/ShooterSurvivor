@@ -28,7 +28,8 @@ public class LivingEntity : MonoBehaviour, IDamageable
         {
             Die();
         }
-        anim.SetTrigger("GetHit");
+        if (anim)
+            anim.SetTrigger("GetHit");
 
     }
 
