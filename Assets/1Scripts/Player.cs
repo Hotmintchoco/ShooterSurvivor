@@ -9,6 +9,7 @@ public class Player : LivingEntity
     public float maxExp = 100f;
 
     public Crosshairs crosshairs;
+    public GameObject divineAura;
 
     Camera viewCamera;
     PlayerController controller;
@@ -20,6 +21,7 @@ public class Player : LivingEntity
         base.Start();
         controller = GetComponent<PlayerController>();
         gunController = GetComponent<GunController>();
+        divineAura.SetActive(false);
         viewCamera = Camera.main;
         Cursor.visible = false;
     }
@@ -62,6 +64,13 @@ public class Player : LivingEntity
         if (Input.GetMouseButtonUp(0))
         {
             gunController.OnTriggerRelease();
+        }
+
+         
+        if (Input.GetKeyDown(KeyCode.Space) && divineAura != null)
+        {
+            bool isActive = divineAura.activeSelf;
+            divineAura.SetActive(!isActive); // 현재 상태 반대로 전환 (토글)
         }
 
         // Get Weapon
