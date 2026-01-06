@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   startingHealth: 2
-  exp: 5
+  exp: 1
   damage: 1
   expItem: {fileID: 3831198720028888026, guid: f22e01decde521544940e19dd3452ef9, type: 3}
 --- !u!195 &84850685672916831

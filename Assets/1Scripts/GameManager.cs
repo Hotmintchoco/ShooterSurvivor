@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public float gameTime;
-    public float maxGameTime = 2 * 9.9f;
+    public float maxGameTime = 3 * 9.9f;
 
     public PoolManager pool;
     public Player player;

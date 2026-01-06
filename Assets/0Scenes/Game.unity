@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameTime: 0
-  maxGameTime: 19.8
+  maxGameTime: 29.9
   pool: {fileID: 1968318592}
   player: {fileID: 911561502}
 --- !u!4 &81079925
@@ -3826,6 +3826,7 @@ MonoBehaviour:
   EnemyPrefabs:
   - {fileID: 4170346690097896688, guid: fac59035b17f818408c6a1644906f94f, type: 3}
   - {fileID: 2937759292537786723, guid: c1772d8303a3f73429728826ef576ca8, type: 3}
+  - {fileID: 4170346690097896688, guid: 5eba77a357426bc4f9c307c2f6e24132, type: 3}
   boxPrefab: {fileID: 1111642519732616155, guid: 02023f13d3487c5459b55482b2937cf6, type: 3}
 --- !u!1 &2017633075
 GameObject:
@@ -3960,8 +3961,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnPoint: []
   spawnTime:
+  - 1.5
+  - 1.25
   - 1
-  - 0.75
 --- !u!1 &2102559403
 GameObject:
   m_ObjectHideFlags: 0
