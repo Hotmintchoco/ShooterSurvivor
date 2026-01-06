@@ -23,7 +23,7 @@ public class AutoMissle : MonoBehaviour
             if (target != null)
             {
                 Shoot(target);
-                timer = 0f; // 타이머 초기화
+                timer = 0;
             }
         }
     }
@@ -34,22 +34,18 @@ public class AutoMissle : MonoBehaviour
         float shortestDistance = Mathf.Infinity; // 초기값은 무한대로 설정
         Vector3 myPos = transform.position;
 
-        // 리스트를 거꾸로 돌면서(삭제 대응) 검사
         for (int i = enemiesInRange.Count - 1; i >= 0; i--)
         {
             Transform enemy = enemiesInRange[i];
 
-            // 1. 적이 죽어서 게임에서 사라졌다면(null) 리스트에서 제거
             if (enemy == null)
             {
                 enemiesInRange.RemoveAt(i);
                 continue;
             }
 
-            // 2. 거리 계산
             float distanceToEnemy = Vector3.Distance(myPos, enemy.position);
 
-            // 3. 현재까지 찾은 거리보다 더 가깝다면 갱신
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -60,12 +56,10 @@ public class AutoMissle : MonoBehaviour
         return nearestEnemy;
     }
 
-    // 적을 향해 총알 발사
     void Shoot(Transform target)
     {
         if (missile == null) return;
 
-        // 총알 생성
         GameObject newMissile = Instantiate(missile, missileHold.position, Quaternion.identity);
         
         Vector3 targetPosition = target.position;

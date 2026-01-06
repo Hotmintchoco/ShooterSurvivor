@@ -5,6 +5,12 @@ public class Projectile : MonoBehaviour
     public LayerMask collisionMask;
     float speed = 20f;
     float damage = 1f;
+    float lifetime = 3f;
+
+    void Start()
+    {
+        Destroy(gameObject, lifetime);
+    }
 
     public void SetSpeed(float newSpeed)
     {
