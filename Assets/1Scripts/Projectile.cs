@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public LayerMask collisionMask;
-    float speed = 10f;
+    float speed = 20f;
     float damage = 1f;
 
     public void SetSpeed(float newSpeed)
