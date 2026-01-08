@@ -71,6 +71,8 @@ public class Enemy : LivingEntity
         base.TakeHit(damage, hit);
         if (health > 0)
             StartCoroutine(HitStop());
+        if (anim)
+            anim.SetTrigger("GetHit");
     }
 
     public override void Die()

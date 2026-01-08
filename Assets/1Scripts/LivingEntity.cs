@@ -28,9 +28,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
         {
             Die();
         }
-        // if (anim)
-        //     anim.SetTrigger("GetHit");
-
     }
 
     [ContextMenu("Self Destruct")]
