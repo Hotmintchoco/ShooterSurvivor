@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,8 @@ public class GameUI : MonoBehaviour
     public Image fadePlane;
     public GameObject gameOverUI;
     public RectTransform healthBar;
-    public RectTransform ExpBar;
+    public RectTransform expBar;
+    public TextMeshProUGUI timer;
 
     Player player;
 
@@ -28,7 +30,12 @@ public class GameUI : MonoBehaviour
             ExpPercent = Mathf.Min(player.exp / player.maxExp, 1);
         }
         healthBar.localScale = new Vector3(healthPercent, 1, 1);
-        ExpBar.localScale = new Vector3(1, ExpPercent, 1);
+        expBar.localScale = new Vector3(1, ExpPercent, 1);
+
+        float nowTime = GameManager.instance.gameTime;
+        int min = Mathf.FloorToInt(nowTime / 60);
+        int sec = Mathf.FloorToInt(nowTime % 60);
+        timer.text = min.ToString("D2") + ":" + sec.ToString("D2"); 
     }
 
     void OnGameOver()
