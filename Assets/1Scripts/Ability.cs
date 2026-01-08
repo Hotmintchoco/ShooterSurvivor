@@ -6,20 +6,22 @@ public class Ability : MonoBehaviour
     public AbilityData data;
     public int level;
 
-    Transform playerT;
     Player player;
     Image icon;
     Text textLevel;
 
     void Awake()
     {
-        playerT = GameObject.FindGameObjectWithTag("Player").transform;
-        player = playerT.GetComponent<Player>();
         icon = GetComponentsInChildren<Image>()[1];
         icon.sprite = data.abilityIcon;
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
+    }
+
+    void Start()
+    {
+        player = GameManager.instance.player;
     }
 
     void LateUpdate()
@@ -34,13 +36,22 @@ public class Ability : MonoBehaviour
             case AbilityData.AbilityType.Range:
                 if (level == 0)
                 {
-                    player.autoMissile.SetActive(true);
+                    player.autoMissile.gameObject.SetActive(true);
+                } else
+                {
+                    player.autoMissile.damage += data.damages[level];
+                    player.autoMissile.attackTime -= data.additions[level];
                 }
                 break;
             case AbilityData.AbilityType.Divine:
                 if (level == 0)
-                    player.divineAura.SetActive(true);
-
+                {
+                    player.divineAura.gameObject.SetActive(true);
+                } else
+                {
+                    player.divineAura.damage += data.damages[level];
+                    player.divineAura.transform.localScale += Vector3.one * data.additions[level];
+                }
                 break;
             case AbilityData.AbilityType.Atk:
                 break;

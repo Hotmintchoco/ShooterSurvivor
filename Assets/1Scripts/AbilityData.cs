@@ -15,4 +15,5 @@ public class AbilityData : ScriptableObject
     [Header("# Level Data")]
     public float baseDamage;
     public float[] damages;
+    public float[] additions;
 }

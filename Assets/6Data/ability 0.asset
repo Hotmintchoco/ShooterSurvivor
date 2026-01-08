@@ -21,6 +21,12 @@ MonoBehaviour:
   damages:
   - 1
   - 1
+  - 0
+  - 1
   - 2
-  - 3
-  - 4
+  additions:
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.15
+  - 0.2

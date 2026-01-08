@@ -6,10 +6,11 @@ public class AutoMissle : MonoBehaviour
 {
     public float attackTime = 1f;
     public Transform missileHold;
-    public GameObject missile;
+    public Projectile missile;
+    public float damage = 1f;
 
-    private List<Transform> enemiesInRange = new List<Transform>();
-    private float timer = 0f;
+    List<Transform> enemiesInRange = new List<Transform>();
+    float timer = 0f;
 
     void Update()
     {
@@ -60,7 +61,8 @@ public class AutoMissle : MonoBehaviour
     {
         if (missile == null) return;
 
-        GameObject newMissile = Instantiate(missile, missileHold.position, Quaternion.identity);
+        Projectile newMissile = Instantiate(missile, missileHold.position, Quaternion.identity);
+        newMissile.SetDamage(damage);
         
         Vector3 targetPosition = target.position;
         targetPosition.y = missileHold.position.y;

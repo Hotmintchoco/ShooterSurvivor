@@ -9,8 +9,8 @@ public class Player : LivingEntity
     public float maxExp = 100f;
 
     public Crosshairs crosshairs;
-    public GameObject divineAura;
-    public GameObject autoMissile;    
+    public DivineAura divineAura;
+    public AutoMissle autoMissile;    
 
     Camera viewCamera;
     PlayerController controller;

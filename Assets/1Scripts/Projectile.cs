@@ -17,6 +17,11 @@ public class Projectile : MonoBehaviour
         speed = newSpeed;
     }
 
+    public void SetDamage(float newDamage)
+    {
+        damage = newDamage;
+    }
+
     void Update()
     {
         float moveDistance = speed * Time.deltaTime;

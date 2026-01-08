@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DivineAura : MonoBehaviour
 {
-    public float damage = 3f;
+    public float damage = 1f;
 
     void OnTriggerStay(Collider other)
     {
