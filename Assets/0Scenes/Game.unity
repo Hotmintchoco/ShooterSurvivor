@@ -369,10 +369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157ed694891a5fa44a117e29be95ebae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  isLive: 1
   gameTime: 0
   maxGameTime: 29.9
   exp: 0
-  nextExp: 0a0000001e0000003200000050000000960000002c010000f4010000ee020000e8030000dc050000
+  nextExp: 010000001e0000003200000050000000960000002c010000f4010000ee020000e8030000dc050000
   level: 0
   pool: {fileID: 1968318592}
   player: {fileID: 911561502}

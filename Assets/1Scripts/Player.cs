@@ -26,6 +26,8 @@ public class Player : LivingEntity
 
     void Update()
     {
+        if (!GameManager.instance.isLive) return;
+
         // Movement input
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;

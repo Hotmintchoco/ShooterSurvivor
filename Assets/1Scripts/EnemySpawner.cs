@@ -5,6 +5,8 @@ public class EnemySpawner : Spawner
 
     void Update()
     {
+        if (!GameManager.instance.isLive) return;
+        
         if (!isDisabled)
         {
             timer += Time.deltaTime;
