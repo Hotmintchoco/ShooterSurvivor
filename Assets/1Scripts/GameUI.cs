@@ -26,9 +26,11 @@ public class GameUI : MonoBehaviour
         float ExpPercent = 0;
         if (player != null)
         {
-            var instance = GameManager.instance;
             healthPercent = player.health / player.startingHealth;
-            ExpPercent = Mathf.Min((float)instance.exp / instance.nextExp[instance.level], 1);
+
+            var instance = GameManager.instance;
+            float maxExp = instance.nextExp[Mathf.Min(instance.level, instance.nextExp.Length - 1)];
+            ExpPercent = Mathf.Min(instance.exp / maxExp, 1);
         }
         healthBar.localScale = new Vector3(healthPercent, 1, 1);
         expBar.localScale = new Vector3(1, ExpPercent, 1);
@@ -56,6 +58,7 @@ public class GameUI : MonoBehaviour
             fadePlane.color = Color.Lerp(from, to, percent);
             yield return null;
         }
+        GameManager.instance.Stop();
     }
 
     public void StartNewGame()

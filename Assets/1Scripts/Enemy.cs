@@ -32,7 +32,7 @@ public class Enemy : LivingEntity
 
         StartCoroutine(UpdatePath());
 
-        Invoke("ChaseStart", 1);
+        Invoke("ChaseStart", 0.25f);
     }
 
     void Update()

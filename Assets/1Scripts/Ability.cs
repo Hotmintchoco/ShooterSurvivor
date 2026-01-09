@@ -70,7 +70,9 @@ public class Ability : MonoBehaviour
                 break;
 
         }
-        level++;
+        
+        if (data.abilityType != AbilityData.AbilityType.Heal)
+            level++;
 
         if (level == data.damages.Length)
         {

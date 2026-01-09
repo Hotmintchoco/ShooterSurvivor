@@ -77,7 +77,6 @@ public class Player : LivingEntity
     public override void Die()
     {
         base.Die();
-        Cursor.visible = true;
     }
 
     public void SetShotDamage(float _damage)
@@ -102,7 +101,6 @@ public class Player : LivingEntity
         if (other.tag == "Item")
         {
             Item item = other.GetComponent<Item>();
-            print(item);
             switch(item.type)
             {
                 case Item.Type.Exp:
