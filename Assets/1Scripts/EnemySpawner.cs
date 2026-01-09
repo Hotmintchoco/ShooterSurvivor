@@ -10,7 +10,9 @@ public class EnemySpawner : Spawner
         if (!isDisabled)
         {
             timer += Time.deltaTime;
-            level = Mathf.FloorToInt(GameManager.instance.gameTime / 10f);
+            
+            if (level < spawnTime.Length - 1)
+                level = Mathf.FloorToInt(GameManager.instance.gameTime / 10f);
 
             if (timer > spawnTime[level])
             {
@@ -22,7 +24,10 @@ public class EnemySpawner : Spawner
 
     void Spawn()
     {
-        GameObject enemy = GameManager.instance.pool.Get(level);
+        // 랜덤 몬스터 생성
+        int minLevel = Mathf.Max(0, level - 2);
+        int ranIndex = Random.Range(minLevel, level+1);
+        GameObject enemy = GameManager.instance.pool.Get(ranIndex);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
     
