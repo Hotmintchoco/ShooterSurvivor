@@ -26,8 +26,9 @@ public class GameUI : MonoBehaviour
         float ExpPercent = 0;
         if (player != null)
         {
+            var instance = GameManager.instance;
             healthPercent = player.health / player.startingHealth;
-            ExpPercent = Mathf.Min(player.exp / player.maxExp, 1);
+            ExpPercent = Mathf.Min((float)instance.exp / instance.nextExp[instance.level], 1);
         }
         healthBar.localScale = new Vector3(healthPercent, 1, 1);
         expBar.localScale = new Vector3(1, ExpPercent, 1);

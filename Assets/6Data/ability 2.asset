@@ -15,7 +15,7 @@ MonoBehaviour:
   abilityType: 2
   abilityId: 2
   abilityName: "\uAE30\uBCF8 \uACF5\uACA9\uB825"
-  abilityDesc: 
+  abilityDesc: "\uBB34\uAE30 \uACF5\uACA9\uB825 \uC99D\uAC00"
   abilityIcon: {fileID: -205726582, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   baseDamage: 1
   damages:
@@ -23,3 +23,4 @@ MonoBehaviour:
   - 3
   - 4
   - 5
+  additions: []

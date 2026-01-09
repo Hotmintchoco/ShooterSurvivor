@@ -15,7 +15,9 @@ MonoBehaviour:
   abilityType: 4
   abilityId: 4
   abilityName: "\uC74C\uB8CC\uC218"
-  abilityDesc: 
+  abilityDesc: "\uC0DD\uBA85\uB825 \uD68C"
   abilityIcon: {fileID: 927338625, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  baseDamage: 0
-  damages: []
+  baseDamage: 1
+  damages:
+  - 5
+  additions: []

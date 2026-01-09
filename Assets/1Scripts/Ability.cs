@@ -9,6 +9,8 @@ public class Ability : MonoBehaviour
     Player player;
     Image icon;
     Text textLevel;
+    Text textName;
+    Text textDesc;
 
     void Awake()
     {
@@ -17,6 +19,10 @@ public class Ability : MonoBehaviour
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
+        textName = texts[1];
+        textDesc = texts[2];
+        textName.text = data.abilityName;
+        textDesc.text = data.abilityDesc;
     }
 
     void Start()
@@ -24,7 +30,7 @@ public class Ability : MonoBehaviour
         player = GameManager.instance.player;
     }
 
-    void LateUpdate()
+    void OnEnable()
     {
         textLevel.text = "Lv." + level;
     }
@@ -59,6 +65,10 @@ public class Ability : MonoBehaviour
             case AbilityData.AbilityType.Shoe:
                 player.moveSpeed += data.damages[level];
                 break;
+            case AbilityData.AbilityType.Heal:
+                player.SetHealth(data.damages[0]);
+                break;
+
         }
         level++;
 

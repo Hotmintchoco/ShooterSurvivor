@@ -940,6 +940,7 @@ MonoBehaviour:
   projectile: {fileID: -6397776869370589916, guid: 5a9ea36be8f966c4d833cf6c5b70f82d, type: 3}
   msBetweenShots: 150
   muzzleVelocity: 40
+  damage: 1
   burstCount: 3
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 2, y: 4}

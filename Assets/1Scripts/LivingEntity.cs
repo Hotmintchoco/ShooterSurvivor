@@ -40,4 +40,13 @@ public class LivingEntity : MonoBehaviour, IDamageable
         }
         Destroy(gameObject);
     }
+
+    public void SetHealth(float _health)
+    {
+        health += _health;
+        if (health > startingHealth)
+        {
+            health = startingHealth;
+        }
+    }
 }

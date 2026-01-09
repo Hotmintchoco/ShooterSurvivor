@@ -5,8 +5,6 @@ using UnityEngine;
 public class Player : LivingEntity
 {
     public float moveSpeed = 5f;
-    public float exp = 0;
-    public float maxExp = 100f;
 
     public Crosshairs crosshairs;
     public DivineAura divineAura;
@@ -106,7 +104,7 @@ public class Player : LivingEntity
             switch(item.type)
             {
                 case Item.Type.Exp:
-                    exp += item.value;
+                    GameManager.instance.GetExp(item.value);
                     break;
                 case Item.Type.Heart:
                     health += item.value;

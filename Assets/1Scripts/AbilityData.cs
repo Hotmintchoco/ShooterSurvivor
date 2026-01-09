@@ -9,6 +9,7 @@ public class AbilityData : ScriptableObject
     public AbilityType abilityType;
     public int abilityId;
     public string abilityName;
+    [TextArea]
     public string abilityDesc;
     public Sprite abilityIcon;
 

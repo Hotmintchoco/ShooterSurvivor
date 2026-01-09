@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     public Projectile projectile;
     public float msBetweenShots = 100f;
     public float muzzleVelocity = 35f;
-    public float damage;
+    public float damage = 1f;
     public int burstCount;
 
     [Header("Recoil")]
