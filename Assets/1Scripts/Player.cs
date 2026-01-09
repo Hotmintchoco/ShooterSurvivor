@@ -80,6 +80,11 @@ public class Player : LivingEntity
         Cursor.visible = true;
     }
 
+    public void SetShotDamage(float _damage)
+    {
+        gunController.SetDamage(_damage);
+    }
+
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Weapon")

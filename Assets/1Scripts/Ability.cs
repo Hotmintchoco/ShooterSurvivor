@@ -54,8 +54,10 @@ public class Ability : MonoBehaviour
                 }
                 break;
             case AbilityData.AbilityType.Atk:
+                player.SetShotDamage(data.damages[level]);
                 break;
             case AbilityData.AbilityType.Shoe:
+                player.moveSpeed += data.damages[level];
                 break;
         }
         level++;

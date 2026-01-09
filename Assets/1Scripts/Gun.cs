@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     public Projectile projectile;
     public float msBetweenShots = 100f;
     public float muzzleVelocity = 35f;
+    public float damage;
     public int burstCount;
 
     [Header("Recoil")]
@@ -63,7 +64,7 @@ public class Gun : MonoBehaviour
                 nextShotTime = Time.time + msBetweenShots / 1000f;
                 Projectile newProjectile = Instantiate(projectile, projectileSpawn[i].position, projectileSpawn[i].rotation);
                 newProjectile.SetSpeed(muzzleVelocity);
-                
+                newProjectile.SetDamage(damage);
             }
             Instantiate(shell, shellEjection.position, shellEjection.rotation);
             muzzleFlash.Activate();

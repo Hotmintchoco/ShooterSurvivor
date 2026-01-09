@@ -57,4 +57,12 @@ public class GunController : MonoBehaviour
             equippedGun.Aim(aimPoint);
         }
     }
+
+    public void SetDamage(float _damage)
+    {
+        if (equippedGun != null)
+        {
+            equippedGun.damage = _damage;
+        }
+    }
 }
