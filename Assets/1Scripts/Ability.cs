@@ -68,9 +68,8 @@ public class Ability : MonoBehaviour
             case AbilityData.AbilityType.Heal:
                 player.SetHealth(data.damages[0]);
                 break;
-
         }
-        
+
         if (data.abilityType != AbilityData.AbilityType.Heal)
             level++;
 

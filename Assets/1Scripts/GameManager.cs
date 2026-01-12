@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int exp;
     public int[] nextExp = { 10, 30, 50, 80, 150, 300, 500, 750, 1000, 1500};
+    public int maxExp;
     public int level;
 
     public PoolManager pool;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        maxExp = nextExp[nextExp.Length - 1];
     }
 
     void Update()
@@ -36,10 +38,10 @@ public class GameManager : MonoBehaviour
     public void GetExp(int _exp)
     {        
         exp += _exp;
-        if (exp >= nextExp[Mathf.Min(level, nextExp.Length - 1)])
+        if (exp >= nextExp[Mathf.Min(level, maxExp)])
         {
+            exp -= nextExp[Mathf.Min(level, maxExp)];
             level++;
-            exp = 0;
             uiLevelUp.Show();
         }
     }

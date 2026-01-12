@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BoxSpawner : Spawner
 {
+
     void Update()
     {
         if (!GameManager.instance.isLive) return;
@@ -9,7 +10,7 @@ public class BoxSpawner : Spawner
         if (!isDisabled)
         {
             timer += Time.deltaTime;
-
+            
             if (timer > spawnTime[0])
             {
                 timer = 0;

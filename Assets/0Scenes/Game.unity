@@ -150,117 +150,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 755188782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3949190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3949194}
-  - component: {fileID: 3949193}
-  - component: {fileID: 3949192}
-  - component: {fileID: 3949191}
-  m_Layer: 10
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &3949191
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3949190}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &3949192
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3949190}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &3949193
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3949190}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &3949194
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3949190}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.31, y: 1.5, z: 4.4}
-  m_LocalScale: {x: 7.5558558, y: 1.9251078, z: 1.9251078}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38835171
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +262,8 @@ MonoBehaviour:
   gameTime: 0
   maxGameTime: 600
   exp: 0
-  nextExp: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  nextExp: 0a0000001e0000003200000050000000960000002c010000f4010000ee020000e8030000dc050000
+  maxExp: 0
   level: 0
   pool: {fileID: 1968318592}
   player: {fileID: 911561502}
@@ -2552,7 +2442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoxSpawner
   spawnPoint: []
   spawnTime:
-  - 120
+  - 100
 --- !u!1 &794627050
 GameObject:
   m_ObjectHideFlags: 0
@@ -6154,6 +6044,7 @@ MonoBehaviour:
   EnemyPrefabs:
   - {fileID: 4170346690097896688, guid: fac59035b17f818408c6a1644906f94f, type: 3}
   - {fileID: 2937759292537786723, guid: c1772d8303a3f73429728826ef576ca8, type: 3}
+  - {fileID: 4170346690097896688, guid: 95e8ac603d91bf74a84ae3a27418e478, type: 3}
   - {fileID: 4170346690097896688, guid: 5eba77a357426bc4f9c307c2f6e24132, type: 3}
   boxPrefab: {fileID: 1111642519732616155, guid: 02023f13d3487c5459b55482b2937cf6, type: 3}
 --- !u!1 &2017633075
@@ -6289,9 +6180,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnPoint: []
   spawnTime:
-  - 0.75
+  - 100
   - 0.5
   - 0.35
+  - 0.3
 --- !u!1 &2102559403
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,7 +6576,6 @@ SceneRoots:
   - {fileID: 1968318591}
   - {fileID: 908031811}
   - {fileID: 911561501}
-  - {fileID: 3949194}
   - {fileID: 2017633078}
   - {fileID: 1684486776}
   - {fileID: 961617173}

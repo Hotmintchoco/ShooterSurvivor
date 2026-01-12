@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemBox
   startingHealth: 2
   items:
+  - {fileID: 3831198720028888026, guid: dd7822bcda03d4e49b38f98e5a6f9dab, type: 3}
   - {fileID: 8616960511536214262, guid: bdf7183a95a7adf46b90bceed107afe0, type: 3}
   - {fileID: 7019116015161647179, guid: 4170540ed9328c94f893db688ed1a2b8, type: 3}
   - {fileID: 7039186233635616148, guid: b6ff154593cf57e4f8251138a8322b75, type: 3}

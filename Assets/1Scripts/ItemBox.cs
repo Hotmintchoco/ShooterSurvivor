@@ -8,7 +8,21 @@ public class ItemBox : LivingEntity
     protected override void Start()
     {
         base.Start();
-        index = Random.Range(0, items.Length);
+
+        // 레벨이 높아짐에 따라 박스의 보상이 더 좋게 나올 수 있음.
+        var instance = GameManager.instance;
+        int maxIndex = Mathf.Min(instance.level + 1, items.Length);
+
+        index = Random.Range(0, maxIndex);
+        Item item = items[index];
+
+        print(index);
+
+        // exp를 얻을 때 처리
+        if (item.type == Item.Type.Exp)
+        {
+            item.value = Mathf.Min(instance.nextExp[instance.level], instance.maxExp);
+        }
     }
     
     public override void Die()

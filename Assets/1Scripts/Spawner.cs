@@ -16,11 +16,12 @@ public class Spawner : MonoBehaviour
         spawnPoint = GetComponentsInChildren<Transform>();
     }
 
-    void Start()
+    public virtual void Start()
     {
         playerEntity = FindAnyObjectByType<Player>();
 
         playerEntity.OnDeath += OnPlayerDeath;
+        timer = spawnTime[0];
     }
 
     void OnPlayerDeath()
