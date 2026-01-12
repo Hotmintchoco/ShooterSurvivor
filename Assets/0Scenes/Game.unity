@@ -262,9 +262,10 @@ MonoBehaviour:
   gameTime: 0
   maxGameTime: 600
   exp: 0
-  nextExp: 0a0000001e0000003200000050000000960000002c010000f4010000ee020000e8030000dc050000
+  nextExp: 050000000f00000019000000280000004b00000096000000fa00000077010000f4010000ee020000
   maxExp: 0
   level: 0
+  maxLevel: 0
   pool: {fileID: 1968318592}
   player: {fileID: 911561502}
   uiLevelUp: {fileID: 794627054}
@@ -6180,10 +6181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnPoint: []
   spawnTime:
-  - 100
+  - 0.75
+  - 0.6
   - 0.5
   - 0.35
-  - 0.3
 --- !u!1 &2102559403
 GameObject:
   m_ObjectHideFlags: 0

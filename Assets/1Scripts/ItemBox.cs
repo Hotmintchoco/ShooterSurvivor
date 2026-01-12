@@ -21,7 +21,8 @@ public class ItemBox : LivingEntity
         // exp를 얻을 때 처리
         if (item.type == Item.Type.Exp)
         {
-            item.value = Mathf.Min(instance.nextExp[instance.level], instance.maxExp);
+            print("expLevel = " + instance.level);
+            item.value = instance.nextExp[instance.level];
         }
     }
     

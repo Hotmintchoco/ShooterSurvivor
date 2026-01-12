@@ -8,7 +8,7 @@ public class GunController : MonoBehaviour
     
     void Start()
     {
-        EquipGun(allGuns[1]);
+        EquipGun(allGuns[0]);
     }
 
     public void EquipGun(Gun gunToEquip)
