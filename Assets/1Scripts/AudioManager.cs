@@ -19,20 +19,30 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
-
-        library = GetComponent<SoundLibrary>();
-
-        musicSources = new AudioSource[2];
-        for (int i = 0; i < 2; i++)
+        if (instance != null)
         {
-            GameObject newMusicSource = new GameObject("Music source " + (i + 1));
-            musicSources[i] = newMusicSource.AddComponent<AudioSource>();
-            newMusicSource.transform.parent = transform;
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            library = GetComponent<SoundLibrary>();
+
+            musicSources = new AudioSource[2];
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject newMusicSource = new GameObject("Music source " + (i + 1));
+                musicSources[i] = newMusicSource.AddComponent<AudioSource>();
+                newMusicSource.transform.parent = transform;
+            }
+
+            audioListener = FindAnyObjectByType<AudioListener>().transform;
+            playerT = FindAnyObjectByType<Player>().transform;
         }
 
-        audioListener = FindAnyObjectByType<AudioListener>().transform;
-        playerT = FindAnyObjectByType<Player>().transform;
     }
 
     void Update()
