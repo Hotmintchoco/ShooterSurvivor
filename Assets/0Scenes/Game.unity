@@ -2996,7 +2996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d97f9c868cf70408bfd78304c6e25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  startingHealth: 10
+  startingHealth: 100
   moveSpeed: 4
   crosshairs: {fileID: 1232139059}
   divineAura: {fileID: 1645511585}

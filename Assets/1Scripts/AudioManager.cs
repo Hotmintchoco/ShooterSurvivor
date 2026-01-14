@@ -36,6 +36,10 @@ public class AudioManager : MonoBehaviour
             {
                 GameObject newMusicSource = new GameObject("Music source " + (i + 1));
                 musicSources[i] = newMusicSource.AddComponent<AudioSource>();
+
+                // [수정] 생성할 때 미리 루프를 켜둡니다.
+                musicSources[i].loop = true;
+
                 newMusicSource.transform.parent = transform;
             }
 
