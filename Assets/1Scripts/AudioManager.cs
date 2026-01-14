@@ -15,9 +15,13 @@ public class AudioManager : MonoBehaviour
     Transform audioListener;
     Transform playerT;
 
+    SoundLibrary library;
+
     void Awake()
     {
         instance = this;
+
+        library = GetComponent<SoundLibrary>();
 
         musicSources = new AudioSource[2];
         for (int i = 0; i < 2; i++)
@@ -52,6 +56,11 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
             AudioSource.PlayClipAtPoint(clip, pos, sfxVolumePercent * masterVolumePercent);
+    }
+
+    public void PlaySound(string soundName, Vector3 pos)
+    {
+        PlaySound(library.GetClipFromName(soundName), pos);
     }
 
     IEnumerator AnimateMusicCrossfade(float duration)

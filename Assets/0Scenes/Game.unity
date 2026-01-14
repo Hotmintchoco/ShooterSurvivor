@@ -1956,6 +1956,7 @@ GameObject:
   - component: {fileID: 603988622}
   - component: {fileID: 603988623}
   - component: {fileID: 603988624}
+  - component: {fileID: 603988625}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -1975,7 +1976,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1832030400}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &603988623
@@ -2003,6 +2005,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   mainTheme: {fileID: 8300000, guid: cdfc4c6a8da0bdb498501e1d84928ee5, type: 3}
+--- !u!114 &603988625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603988621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c63f54e0606e07459f68cca6ad70fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
+  soundGroups:
+  - groupID: Impact
+    group:
+    - {fileID: 8300000, guid: 73d8a308a5568154d87c324c134e07b2, type: 3}
+    - {fileID: 8300000, guid: c5f9fa97f4cf63349a0a4bf5dfc0e0c6, type: 3}
+    - {fileID: 8300000, guid: f2c3f80d45612f54a8f96fb8a6a5ac96, type: 3}
+  - groupID: Enemy Death
+    group:
+    - {fileID: 8300000, guid: c1d19d256b65dec468886b4dcc9fdd64, type: 3}
+    - {fileID: 8300000, guid: 5827713045c85074f84e8f57930735f3, type: 3}
 --- !u!1 &661317911
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,6 +5714,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787774074}
   m_CullTransparentMesh: 1
+--- !u!1 &1832030399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832030400}
+  - component: {fileID: 1832030401}
+  m_Layer: 0
+  m_Name: Audio Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832030400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832030399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 603988622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1832030401
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832030399}
+  m_Enabled: 1
 --- !u!1 &1838684966
 GameObject:
   m_ObjectHideFlags: 0
@@ -6230,7 +6294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnPoint: []
   spawnTime:
-  - 100
+  - 0.75
   - 0.6
   - 0.5
   - 0.35

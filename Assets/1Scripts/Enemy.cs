@@ -67,10 +67,16 @@ public class Enemy : LivingEntity
 
     public override void TakeHit(float damage, RaycastHit hit)
     {
+        AudioManager.instance.PlaySound("Impact", transform.position);
         if (dead) return;
         base.TakeHit(damage, hit);
         if (health > 0)
             StartCoroutine(HitStop());
+        else
+        {
+            AudioManager.instance.PlaySound("Enemy Death", transform.position);
+        }
+
         if (anim)
             anim.SetTrigger("GetHit");
     }
